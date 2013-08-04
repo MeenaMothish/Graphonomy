@@ -1,0 +1,16 @@
+
+
+<table id="NoteTable">
+    <tbody>
+        <% for(var i = 0; i < NoteResultsArr.length ; i++){ %>
+        	<% for (var key in NoteResultsArr[i]) { %>
+        		<tr>
+        			<td><%= key %></td>
+        			<td><%= NoteResultsArr[i][key] %></td>
+        		</tr>
+        	<% } %>
+        <% } %> 
+    </tbody>
+</table>
+
+

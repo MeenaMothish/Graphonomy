@@ -1,0 +1,116 @@
+<html>
+<title>Graphonomy</title>
+<head>
+	<meta charset="utf-8">
+	<link href="css/bootstrap.css" rel="stylesheet"</link>
+
+	<style type="text/css">
+		body
+		{
+			padding-top: 60px;
+			padding-bottom: 40px;
+		}
+	</style>
+	
+
+</head>
+
+<body>
+	<!--header-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+			<a class="brand" href="./index-graph.html">Graphonomy</a>
+			<div class="nav-collapse collapse">
+            	<ul class="nav">
+		            <li class="active">
+		                <a href="./SpecSearch.html">Search by Spec</a>
+		            </li>
+		            <li class="">
+		                <a href="" class="disabled">Search by Terms</a>
+		            </li>
+		         </ul>
+		    </div>
+	    </div>
+	  </div>
+	</div>
+	
+
+
+
+<!--left tabs-->
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="offset1 span10">
+			<!--content for SpecSearch-->
+				<div class="tabbable"> 		 
+					<ul class="nav nav-pills well">
+						<li id="Term-pill" class="active"><a href="#tab1" data-toggle="pill">Term Class</a></li>
+					    <li><a id="Relation-pill" href="#tab2" data-toggle="pill">Relation Class</a></li>
+						<li><a id="Note-pill" href="#tab3" data-toggle="pill">Note Class</a></li>
+			  		</ul>
+
+						  	<div class="tab-content">
+								<div id="tab1" class="tab-pane active">content for searching the Graphonomy database using Term Classes</div>
+								<div id="tab2" class="tab-pane">content for searching the Graphonomy database using Relation Classes</div>
+								<div id="tab3" class="tab-pane"> 
+									<div class="row-fluid">
+										<div class="offset1 span4">
+											<h4>Search Note Classes</h4><br>
+											<input id="noteClass_SearchBox" type="text" data-provide="typeahead" automcomplete="off" placeholder="All"></input><br>
+ 											<button id="noteClass_SearchBtn" class="btn">Search</button>
+ 										</div>
+
+ 										<div id="noteResults" class="span6 well" style="visibility:visible">
+ 											<h4>Note Class Results</h4>
+ 											<div id="note_results">
+ 												<table id="NoteTable">
+ 												</table>
+ 												
+ 											</div>
+ 										</div>
+
+ 									</div>
+
+
+								</div>
+							</div>
+					  	</div>
+					</div>
+	  			</div>
+	  		</div>
+
+
+<!--end-->
+
+
+<!-- Scripts -->
+	<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/can.custom.js"></script>
+	<script type="text/javascript" src="js/NoteClass.js"></script>
+	<script type="text/javascript" src="js/ejs_production.js"></script>
+	<script type="text/ejs" id="NoteClass.ejs">
+			<//table id="NoteTable">
+			   // <tbody>
+			        //<% for(var i = 0; i < this.length ; i++){ %>
+			        	//<% for (var key in this[i]) { %>
+			        		//<tr>
+			        			//<td><%= key %></td>
+			        			//<td><%= this[i][key] %></td>
+			        		//</tr>
+			        	//<% } %>
+			       // <% } %> 
+			    //</tbody>
+			//</table>
+		<% for(var i = 0; i < this.length ; i++){ %>
+			<% for (var key in this[i]) { %>
+				<div> this </div> 
+			<% } %>
+		<% } %>
+	</script>
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "noteClasses" : [ {
+    "id" : 1,
+    "noteId" : "ROOT NODE",
+    "noteLabel" : "ROOT NODE",
+    "type" : "bool",
+    "defaultValue" : "1",
+    "required" : false
+  }, {
+    "id" : 2,
+    "noteId" : "Match on stemmed term",
+    "noteLabel" : "Match on stemmed term",
+    "type" : "str",
+    "defaultValue" : "Yes",
+    "required" : false,
+    "enums" : [ "Yes", "No" ]
+  }, {
+    "id" : 3,
+    "noteId" : "Search Engine Note",
+    "noteLabel" : "Search Engine Note",
+    "type" : "str",
+    "defaultValue" : "DO NOT INDEX",
+    "required" : false,
+    "pattern" : ".*",
+    "range" : {
+      "max" : 15,
+      "min" : 0
+    }
+  }, {
+    "id" : 4,
+    "noteId" : "ISO 3166-1 3 Digit codes",
+    "noteLabel" : "ISO 3166-1 3 Digit codes",
+    "type" : "str",
+    "required" : false,
+    "pattern" : "[A-Z]{3}",
+    "range" : {
+      "max" : 3,
+      "min" : 0
+    }
+  } ],
+  "relationClasses" : [ {
+    "id" : -1,
+    "relationName" : "NT",
+    "type" : "hierarchy",
+    "description" : "Narrower Term",
+    "extended" : false
+  }, {
+    "id" : -1,
+    "relationName" : "BT",
+    "type" : "hierarchy",
+    "description" : "Broader Term",
+    "extended" : false
+  }, {
+    "id" : -1,
+    "relationName" : "Language Spoken",
+    "type" : "related",
+    "description" : "Language Spoken",
+    "extended" : true
+  }, {
+    "id" : -1,
+    "relationName" : "Spoken In",
+    "type" : "related",
+    "description" : "Spoken In",
+    "extended" : true
+  } ],
+  "termClasses" : [ {
+    "id" : -1,
+    "className" : "Country Class",
+    "metaNotes" : [ {
+      "termClassName" : "Country Class",
+      "noteLabel" : "ROOT NODE",
+      "mandatory" : false
+    }, {
+      "termClassName" : "Country Class",
+      "noteLabel" : "Search Engine Note",
+      "mandatory" : false
+    }, {
+      "termClassName" : "Country Class",
+      "noteLabel" : "ISO 3166-1 3 Digit codes",
+      "mandatory" : false
+    } ],
+    "metaRelations" : [ {
+      "termClassName" : "Country Class",
+      "relationName" : "NT",
+      "targetClassName" : "Country Class"
+    }, {
+      "termClassName" : "Country Class",
+      "relationName" : "Language Spoken",
+      "targetClassName" : "Language Class"
+    } ]
+  }, {
+    "id" : -1,
+    "className" : "Language Class",
+    "metaNotes" : [ {
+      "termClassName" : "Language Class",
+      "noteLabel" : "Match on stemmed term",
+      "mandatory" : false
+    } ],
+    "metaRelations" : [ {
+      "termClassName" : "Language Class",
+      "relationName" : "NT",
+      "targetClassName" : "Language Class"
+    } ]
+  } ]
+}
