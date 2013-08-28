@@ -20,11 +20,11 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
 	  <div class="navbar-inner">
 	    <div class="container">
-			<a class="brand" href="./index-graph.html">Graphonomy</a>
+			<a class="brand" href="index.html">Graphonomy</a>
 			<div class="nav-collapse collapse">
             	<ul class="nav">
 		            <li class="active">
-		                <a href="./SpecSearch.html">Search by Spec</a>
+		                <a href="SpecSearch.html">Search by Spec</a>
 		            </li>
 		            <li class="">
 		                <a href="" class="disabled">Search by Terms</a>
@@ -63,9 +63,8 @@
 
  										<div id="noteResults" class="span6 well" style="visibility:visible">
  											<h4>Note Class Results</h4>
- 											<div id="note_results">
- 												<table id="NoteTable">
- 												</table>
+ 											<div class="span9" id="note_results">
+ 												
  												
  											</div>
  										</div>
@@ -90,27 +89,6 @@
 	<script type="text/javascript" src="js/can.custom.js"></script>
 	<script type="text/javascript" src="js/NoteClass.js"></script>
 	<script type="text/javascript" src="js/ejs_production.js"></script>
-	<script type="text/ejs" id="NoteClass.ejs">
-			<//table id="NoteTable">
-			   // <tbody>
-			        //<% for(var i = 0; i < this.length ; i++){ %>
-			        	//<% for (var key in this[i]) { %>
-			        		//<tr>
-			        			//<td><%= key %></td>
-			        			//<td><%= this[i][key] %></td>
-			        		//</tr>
-			        	//<% } %>
-			       // <% } %> 
-			    //</tbody>
-			//</table>
-		<% for(var i = 0; i < this.length ; i++){ %>
-			<% for (var key in this[i]) { %>
-				<div> this </div> 
-			<% } %>
-		<% } %>
-	</script>
-	
-	
 
 </body>
 </html>
